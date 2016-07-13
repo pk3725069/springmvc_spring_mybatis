@@ -1,0 +1,12 @@
+[INFO] [2016-07-12 10:52:38][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@32a5b39c: startup date [Tue Jul 12 10:52:38 CST 2016]; root of context hierarchy
+  [INFO] [2016-07-12 10:52:38][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-beans.xml]
+  [INFO] [2016-07-12 10:52:38][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2016-07-12 10:52:39][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6f9623fe: startup date [Tue Jul 12 10:52:39 CST 2016]; root of context hierarchy
+  [INFO] [2016-07-12 10:52:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-beans.xml]
+  [INFO] [2016-07-12 10:52:39][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2016-07-12 10:52:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+  [INFO] [2016-07-12 10:52:39][org.springframework.jdbc.support.SQLErrorCodesFactory]SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+  [INFO] [2016-07-12 10:52:39][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6eddcf85: startup date [Tue Jul 12 10:52:39 CST 2016]; root of context hierarchy
+  [INFO] [2016-07-12 10:52:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-beans.xml]
+  [INFO] [2016-07-12 10:52:39][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  
