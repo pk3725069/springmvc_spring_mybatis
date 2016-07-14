@@ -25,11 +25,11 @@ public class UserServiceDaoImpl implements IUserService {
     }
 
     public User get(Integer id) {
-    	DaoProxy pro = new DaoProxy();
+/*    	DaoProxy pro = new DaoProxy();
 
     	IUserDao ud = (IUserDao)pro.createProxyIntance(userDao);
-    	
-        return ud.get(id);
+    	*/
+        return userDao.get(id);
     }
 
     public int insert(User u) {
