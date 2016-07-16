@@ -1,8 +1,6 @@
-package com.dao.datasource;
+package com.dao.dynamicDS;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
-
-import com.dao.db.DBContextHolder;
 
 public class DynamicDataSource extends AbstractRoutingDataSource{
 

@@ -24,14 +24,63 @@
             <version>4.11</version>  
             <!-- 表示开发的时候引入，发布的时候不会加载此包 -->  
             <scope>test</scope>  
-        </dependency>
+        </dependency>  
         <!-- spring核心包 -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-core</artifactId>  
-            <version>${spring.version}</version>  
+            <version>4.1.7.RELEASE</version>  
         </dependency>  
-	    <dependency>
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-oxm</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-tx</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-webmvc</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+            <exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-web</artifactId>
+				</exclusion>
+			</exclusions>
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-aop</artifactId>  
+            <version>4.1.7.RELEASE</version>  
+        </dependency>  
+		  <dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>1.6.9</version>
+		</dependency>
+		<dependency>  
+	       <groupId> org.aspectj</groupId >  
+	       <artifactId> aspectjweaver</artifactId >  
+	       <version> 1.6.11</version >  
+		</dependency> 
+		<dependency>
 		    <groupId>org.apache.httpcomponents</groupId>
 		    <artifactId>httpclient</artifactId>
 		    <version>4.5.1</version>
@@ -43,47 +92,14 @@
 		</dependency>
         <dependency>  
             <groupId>org.springframework</groupId>  
-            <artifactId>spring-web</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-oxm</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-tx</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-jdbc</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-webmvc</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-aop</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
             <artifactId>spring-context-support</artifactId>  
-            <version>${spring.version}</version>  
+            <version>4.1.7.RELEASE</version>  
         </dependency>  
   
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-test</artifactId>  
-            <version>${spring.version}</version>  
+            <version>4.1.7.RELEASE</version>  
         </dependency>  
         <!-- mybatis核心包 -->  
         <dependency>  
@@ -172,7 +188,7 @@
             <artifactId>commons-codec</artifactId>  
             <version>1.9</version>  
         </dependency>  
-
+          
           
     </dependencies> 
   <build>

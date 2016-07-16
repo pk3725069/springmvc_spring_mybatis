@@ -1,4 +1,4 @@
-package com.dao.db;
+package com.dao.dynamicDS;
 
 public class DBContextHolder {
 	/** 

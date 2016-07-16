@@ -11,14 +11,14 @@ import org.slf4j.LoggerFactory;
 
 import com.define.EnumCodeDefine;
 import com.exception.xsgException;
-import com.netease.cloud.ClientException;
+/*import com.netease.cloud.ClientException;
 import com.netease.cloud.ServiceException;
 import com.netease.cloud.auth.BasicCredentials;
 import com.netease.cloud.auth.Credentials;
 import com.netease.cloud.services.nos.NosClient;
 import com.netease.cloud.services.nos.model.PutObjectRequest;
 import com.netease.cloud.services.nos.model.PutObjectResult;
-
+*/
 /**
  * 图片存储
  * 调用NOS网易云对象存储API实现图片的存储
@@ -26,7 +26,7 @@ import com.netease.cloud.services.nos.model.PutObjectResult;
  *
  */
 public class baseStorage {
-
+/*
 	private static final  String accessKey = "a499c0e70a734f49889035ffd51072d9";
 	private static final String secretKey = "796c0a2d020443508a55a6ecdf4a742b";
 	private static final  String bucketName  = "mini-xsg1";
@@ -162,5 +162,5 @@ public class baseStorage {
 		//deleteFileFromNOS(url);
 		 url = pushFileToNOS(4,"test4.jpg", file);
 		
-	}
+	}*/
 }

@@ -54,7 +54,7 @@
     </bean>  
     
    <!-- 动态数据源 -->  
-   <bean id="dynamicDataSource" class="com.dao.datasource.DynamicDataSource">  
+   <bean id="dynamicDataSource" class="com.dao.dynamicDS.DynamicDataSource">  
        <!-- 通过key-value关联数据源 -->  
        <property name="targetDataSources">  
            <map>  
@@ -89,6 +89,13 @@
         </tx:attributes>
     </tx:advice>
 
-
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <bean id="manyDataSourceAspect" class="com.dao.dynamicDS.DataSourceAspect" />
+    <aop:config>
+        <aop:aspect id="c" ref="manyDataSourceAspect">
+            <aop:pointcut id="txx" expression="execution(* cn.itcast.mybatis.dao.*.*(..))"/>
+            <aop:before pointcut-ref="txx" method="before"/>
+        </aop:aspect>
+    </aop:config>
 
 </beans>
