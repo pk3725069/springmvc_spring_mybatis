@@ -17,34 +17,63 @@
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
         <property name="location" value="classpath:jdbc.properties" />  
     </bean>  
- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  
+ 	<bean id="dataSourceW" class="org.apache.commons.dbcp.BasicDataSource"  
         destroy-method="close">  
         <property name="driverClassName" value="${driver}" />  
-        <property name="url" value="${url}" />  
-        <property name="username" value="${username}" />  
-        <property name="password" value="${password}" />  
+        <property name="url" value="${jdbc.w.url}" />  
+        <property name="username" value="${jdbc.w.username}" />  
+        <property name="password" value="${jdbc.w.password}" />  
         <!-- 初始化连接大小 -->  
-        <property name="initialSize" value="${initialSize}"></property>  
+        <property name="initialSize" value="${jdbc.w.initialSize}"></property>  
         <!-- 连接池最大数量 -->  
-        <property name="maxActive" value="${maxActive}"></property>  
+        <property name="maxActive" value="${jdbc.w.maxActive}"></property>  
         <!-- 连接池最大空闲 -->  
-        <property name="maxIdle" value="${maxIdle}"></property>  
+        <property name="maxIdle" value="${jdbc.w.maxIdle}"></property>  
         <!-- 连接池最小空闲 -->  
-        <property name="minIdle" value="${minIdle}"></property>  
+        <property name="minIdle" value="${jdbc.w.minIdle}"></property>  
         <!-- 获取连接最大等待时间 -->  
-        <property name="maxWait" value="${maxWait}"></property>  
+        <property name="maxWait" value="${jdbc.w.maxWait}"></property>  
     </bean>  
     
+ 	<bean id="dataSourceR" class="org.apache.commons.dbcp.BasicDataSource"  
+        destroy-method="close">  
+        <property name="driverClassName" value="${driver}" />  
+        <property name="url" value="${jdbc.r.url}" />  
+        <property name="username" value="${jdbc.r.username}" />  
+        <property name="password" value="${jdbc.r.password}" />  
+        <!-- 初始化连接大小 -->  
+        <property name="initialSize" value="${jdbc.r.initialSize}"></property>  
+        <!-- 连接池最大数量 -->  
+        <property name="maxActive" value="${jdbc.r.maxActive}"></property>  
+        <!-- 连接池最大空闲 -->  
+        <property name="maxIdle" value="${jdbc.r.maxIdle}"></property>  
+        <!-- 连接池最小空闲 -->  
+        <property name="minIdle" value="${jdbc.r.minIdle}"></property>  
+        <!-- 获取连接最大等待时间 -->  
+        <property name="maxWait" value="${jdbc.r.maxWait}"></property>  
+    </bean>  
+    
+   <!-- 动态数据源 -->  
+   <bean id="dynamicDataSource" class="com.dao.datasource.DynamicDataSource">  
+       <!-- 通过key-value关联数据源 -->  
+       <property name="targetDataSources">  
+           <map>  
+               <entry value-ref="dataSourceR" key="dataSourceKeyR"></entry>  
+               <entry value-ref="dataSourceW" key="dataSourceKeyW"></entry>  
+           </map>  
+       </property>  
+       <property name="defaultTargetDataSource" ref="dataSourceW" />      
+   </bean> 
+   
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:sqlMapConfig.xml"></property>
-        <property name="dataSource" ref="dataSource"></property>
-
+        <property name="dataSource" ref="dynamicDataSource" /> 
     </bean>
     
     <!-- 事务相关控制 -->
     <bean name="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dynamicDataSource"/>
     </bean>
 
     <!-- 通知 -->

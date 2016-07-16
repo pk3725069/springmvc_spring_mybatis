@@ -6,6 +6,7 @@ import java.util.List;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import cn.itcast.mybatis.domain.User;
+import com.dao.db.DBContextHolder;
 /**
  * proxy 
  * @author hzlinghongshun
@@ -35,7 +36,7 @@ public class BaseDao extends SqlSessionDaoSupport {
 
     //获取对象
     public User get(String statement,Object parameter) {
-    	System.out.println("get before :"+new Date());
+    	DBContextHolder.setDbType(DBContextHolder.DB_TYPE_W);
         return this.getSqlSession().selectOne(statement, parameter); 
     }
     
